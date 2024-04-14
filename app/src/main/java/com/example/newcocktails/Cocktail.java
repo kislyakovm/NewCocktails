@@ -3,27 +3,17 @@ package com.example.newcocktails;
 import java.util.List;
 
 public class Cocktail {
-    private int id;
+    private String id;
     private boolean isAlcoholic;
     private String name, imageUrl, category, instructions;
 
     List<String> ingredients;
 
-    public Cocktail(int id, boolean isAlcoholic, String name, String imageUrl, String category, String instructions, List<String> ingredients) {
-        this.id = id;
-        this.isAlcoholic = isAlcoholic;
-        this.name = name;
-        this.imageUrl = imageUrl;
-        this.category = category;
-        this.instructions = instructions;
-        this.ingredients = ingredients;
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
