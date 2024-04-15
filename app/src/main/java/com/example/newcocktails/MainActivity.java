@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycleViewCocktails);
         int height = recyclerView.getHeight();
         recyclerView.getLayoutParams().height = height;
-//        recyclerView.hasFixedSize();
+        recyclerView.hasFixedSize();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         cocktails = new ArrayList<>();
 
@@ -65,29 +65,31 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("drinks");
                     for (int i = 0; i < jsonArray.length(); i++) {
 
+                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+
                         String id, alcoholic, name, imageUrl, category, instructions;
                         List<String> ingredients = new ArrayList<>();
 
-//                        id = jsonObject.getString("idDrink");
-//                        alcoholic = jsonObject.getString("strAlcoholic");
-                        name = jsonObject.getString("strDrink");
-                        imageUrl = jsonObject.getString("strDrinkThumb");
-                        category = jsonObject.getString("strCategory");
-                        instructions = jsonObject.getString("strInstructions");
+                        id = jsonObject1.getString("idDrink");
+                        alcoholic = jsonObject1.getString("strAlcoholic");
+                        name = jsonObject1.getString("strDrink");
+                        imageUrl = jsonObject1.getString("strDrinkThumb");
+                        category = jsonObject1.getString("strCategory");
+                        instructions = jsonObject1.getString("strInstructions");
 
                         String ingredient;
-                        for (int j = 1; j <= 16; j++) {
-                            ingredient = jsonObject.getString("strIngredient" + j);
+                        for (int j = 1; j <= 15; j++) {
+                            ingredient = jsonObject1.getString("strIngredient" + j);
                             if (ingredient != null) {
                                 ingredients.add(ingredient);
                             } else break;
                         }
 
                         Cocktail cocktail = new Cocktail();
-//                        cocktail.setId(id);
-                        cocktail.setId("1");
-//                        cocktail.setAlcoholic(alcoholic.equals("Alcoholic"));
-                        cocktail.setAlcoholic(true);
+                        cocktail.setId(id);
+//                        cocktail.setId("1");
+                        cocktail.setAlcoholic(alcoholic.equals("Alcoholic"));
+//                        cocktail.setAlcoholic(true);
                         cocktail.setName(name);
                         cocktail.setImageUrl(imageUrl);
                         cocktail.setCategory(category);
@@ -102,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
+
                 }
 
             }

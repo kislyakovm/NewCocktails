@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        android:background="@color/yellow"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,20 +31,20 @@
             android:id="@+id/listButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
             android:contentDescription="list button"
-            android:layout_gravity="center"
             app:srcCompat="@drawable/ic_list" />
 
         <ImageButton
             android:id="@+id/randomButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:layout_gravity="center"
             android:contentDescription="random button"
             app:srcCompat="@drawable/ic_random" />
 
@@ -53,9 +52,9 @@
             android:id="@+id/findButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:layout_gravity="center"
             android:contentDescription="find button"
             app:srcCompat="@drawable/ic_find" />
 
@@ -63,9 +62,9 @@
             android:id="@+id/favouritesButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:layout_gravity="center"
             android:contentDescription="favourites button"
             app:srcCompat="@drawable/ic_star" />
     </LinearLayout>

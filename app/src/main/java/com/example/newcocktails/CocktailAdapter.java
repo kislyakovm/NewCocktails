@@ -60,8 +60,8 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
-            nameTextView = itemView.findViewById(R.id.nameView);
-            categoryTextView = itemView.findViewById(R.id.categoryView);
+            nameTextView = itemView.findViewById(R.id.nameTextView);
+            categoryTextView = itemView.findViewById(R.id.categoryTextView);
 
         }
     }
