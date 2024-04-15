@@ -46,6 +46,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="random button"
+            android:onClick="goRandomCocktail"
             app:srcCompat="@drawable/ic_random" />
 
         <ImageButton

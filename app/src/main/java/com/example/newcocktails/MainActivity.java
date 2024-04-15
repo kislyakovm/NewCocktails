@@ -1,7 +1,9 @@
 package com.example.newcocktails;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -87,9 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Cocktail cocktail = new Cocktail();
                         cocktail.setId(id);
-//                        cocktail.setId("1");
                         cocktail.setAlcoholic(alcoholic.equals("Alcoholic"));
-//                        cocktail.setAlcoholic(true);
                         cocktail.setName(name);
                         cocktail.setImageUrl(imageUrl);
                         cocktail.setCategory(category);
@@ -111,11 +111,15 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Log.i("Tag", "Hello");
                 volleyError.printStackTrace();
             }
         });
         requestQueue.add(request);
+    }
+
+    public void goRandomCocktail(View view) {
+        Intent intent = new Intent(this, RandomPageActivity.class);
+        startActivity(intent);
     }
 
 
