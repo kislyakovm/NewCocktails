@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@macro/m3_comp_navigation_bar_container_color"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,61 +13,76 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/listButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent"
-            android:contentDescription="list button"
-            app:srcCompat="@drawable/ic_list" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.App.BottomNavigationView"
+            app:menu="@menu/bottom_navigation_menu" />
 
-        <ImageButton
-            android:id="@+id/randomButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:contentDescription="random button"
-            android:onClick="goRandomCocktail"
-            app:srcCompat="@drawable/ic_random" />
-
-        <ImageButton
-            android:id="@+id/findButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:contentDescription="find button"
-            app:srcCompat="@drawable/ic_find" />
-
-        <ImageButton
-            android:id="@+id/favouritesButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:contentDescription="favourites button"
-            app:srcCompat="@drawable/ic_star" />
     </LinearLayout>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent">-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/listButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:backgroundTint="@android:color/transparent"-->
+<!--            android:contentDescription="list button"-->
+<!--            app:srcCompat="@drawable/ic_list" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/randomButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:contentDescription="random button"-->
+<!--            android:onClick="goRandomCocktail"-->
+<!--            app:srcCompat="@drawable/ic_random" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/findButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:contentDescription="find button"-->
+<!--            app:srcCompat="@drawable/ic_find" />-->
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/favouritesButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:contentDescription="favourites button"-->
+<!--            app:srcCompat="@drawable/ic_star" />-->
+<!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

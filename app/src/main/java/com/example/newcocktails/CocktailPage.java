@@ -1,6 +1,7 @@
 package com.example.newcocktails;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,4 +29,5 @@ public class CocktailPage extends AppCompatActivity {
             return insets;
         });
     }
+
 }
